@@ -24,7 +24,7 @@ public class RelativeLocatorConcepts {
 		
 //		4. Find the 'services' link using relative locator
 		driver.findElement(RelativeLocator.with(By.linkText("Services")).below(By.tagName("About Us")));
-
+		driver.findElement(RelativeLocator.with(By.linkText("Services")).above(By.tagName("Products")));
 	}
 
 }
