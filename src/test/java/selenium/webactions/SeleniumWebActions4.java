@@ -1,11 +1,16 @@
 package selenium.webactions;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,11 +20,11 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class SeleniumWebActions3 {
+public class SeleniumWebActions4 {
 
 	static WebDriver driver;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 //		1. Launch browser window
 		driver = new ChromeDriver();
 
@@ -36,6 +41,10 @@ public class SeleniumWebActions3 {
 		WebElement infoAlertButton = driver.findElement(By.xpath("//button[@id='alertButton']"));
 		WebElement confirmAlertButtonButton = driver.findElement(By.xpath("//button[@id='confirmButton']"));
 		WebElement promptButton = driver.findElement(By.xpath("//button[@id='promtButton']"));
+		
+//		take screenshot of logo
+		WebElement logo = driver.findElement(By.xpath("//img[contains(@src,'Toolsqa.jpg')]"));
+		elementScreenshot(logo, "logo_screenshot");
 			       
 //		5.Launch Information alert
 		infoAlertButton.click();
@@ -89,11 +98,26 @@ public class SeleniumWebActions3 {
 //		14.Click on OK button
 		promptAlert.accept();
 		
+//		take screenshot of window
+		windowScreenshot(driver, "window_screenshot");
+		
 //		15.Close the browser
 		driver.quit();
-
-
 		
+	}
+	
+	public static String windowScreenshot(WebDriver driver, String fileName) throws IOException {
+		String screenshotPath = System.getProperty("user.dir") + "\\Screenshots\\" + fileName + ".png";
+		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshotFile,new File(screenshotPath));
+		return screenshotPath;
+	}
+
+	public static String elementScreenshot(WebElement element, String fileName) throws IOException {
+		String screenshotPath = System.getProperty("user.dir") + "\\Screenshots\\" + fileName + ".png";
+		File screenshotFile = element.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshotFile,new File(screenshotPath));
+		return screenshotPath;
 	}
 
 }
