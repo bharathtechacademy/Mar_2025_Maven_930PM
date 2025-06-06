@@ -18,17 +18,17 @@ public class Constructor1 {
 		empId=id;
 	}
 	
-	public void printEmpDetails(String name) {
+	public void printEmpDetails(int empId,String name) {
 		System.out.println(empId);
 		System.out.println(name);
 	}
 
-	public void printEmpAddress(String Address) {
+	public void printEmpAddress(int empId,String Address) {
 		System.out.println(empId);
 		System.out.println(Address);
 	}
 
-	public void printEmpVisaDetails(String visaNumber) {
+	public void printEmpVisaDetails(int empId,String visaNumber) {
 		System.out.println(empId);
 		System.out.println(visaNumber);
 	}
