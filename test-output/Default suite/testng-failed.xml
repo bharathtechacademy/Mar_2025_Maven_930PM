@@ -8,6 +8,8 @@
           <include name="stopReporting"/>
           <include name="closeBrowser"/>
           <include name="TestCase3"/>
+          <include name="TestCase2"/>
+          <include name="TestCase1"/>
           <include name="launchBrowserAndApplication"/>
           <include name="startReporting"/>
         </methods>
