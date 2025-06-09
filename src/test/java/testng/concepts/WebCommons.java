@@ -7,17 +7,19 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 
-public class WebCommons {
+import utilities.Reports;
+
+public class WebCommons extends Reports{
 	
-	@BeforeSuite(alwaysRun = true)
-	public void startReporting() {
-		System.out.println("Reporting process started.....");
-	}
-	
-	@AfterSuite(alwaysRun = true)
-	public void stopReporting() {
-		System.out.println("Reporting process stopped and Report generated.....");
-	}
+//	@BeforeSuite(alwaysRun = true)
+//	public void startReporting() {
+//		System.out.println("Reporting process started.....");
+//	}
+//	
+//	@AfterSuite(alwaysRun = true)
+//	public void stopReporting() {
+//		System.out.println("Reporting process stopped and Report generated.....");
+//	}
 	
 	@BeforeMethod(alwaysRun = true)
 	@Parameters({"BROWSER", "URL"})

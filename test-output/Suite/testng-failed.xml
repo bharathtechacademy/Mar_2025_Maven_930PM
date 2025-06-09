@@ -3,16 +3,18 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <parameter name="BROWSER" value="Firefox"/>
   <parameter name="URL" value="https://www.google.com"/>
+  <listeners>
+    <listener class-name="testng.concepts.TestListeners"/>
+  </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
       <class name="testng.concepts.AppCommons">
         <methods>
-          <include name="stopReporting"/>
           <include name="closeBrowser"/>
           <include name="TestCase3"/>
           <include name="TestCase1"/>
+          <include name="setupReport"/>
           <include name="launchBrowserAndApplication"/>
-          <include name="startReporting"/>
         </methods>
       </class> <!-- testng.concepts.AppCommons -->
     </classes>

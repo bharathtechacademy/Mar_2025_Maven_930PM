@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods, 1 failed,  3 skipped,  1 passed</span>
+                    <span class="method-stats">6 methods, 1 failed,  3 skipped,  2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -154,6 +154,11 @@
                         <a href="#" panel-name="suite-Suite" title="testng.concepts.AppCommons" class="method navigator-link" hash-for-method="TestCase2">TestCase2</a> <!-- method navigator-link -->
                       </span>
                       <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testng.concepts.AppCommons" class="method navigator-link" hash-for-method="TestCase2">TestCase2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
@@ -177,10 +182,9 @@
                   <a name="TestCase1">
                   </a> <!-- TestCase1 -->
                   <span class="method-name">TestCase1</span>
-                  <div class="stack-trace">java.lang.AssertionError: Test Case 1 - Home Page Validations Failed...
-	at testng.concepts.AppCommons.TestCase1(AppCommons.java:10)
+                  <div class="stack-trace">org.testng.internal.thread.ThreadTimeoutException: Method testng.concepts.AppCommons.TestCase1() didn&apos;t finish within the time-out 3000
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 26 stack frames
+... Removed 24 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -197,10 +201,9 @@
                   <a name="TestCase1">
                   </a> <!-- TestCase1 -->
                   <span class="method-name">TestCase1</span>
-                  <div class="stack-trace">java.lang.AssertionError: Test Case 1 - Home Page Validations Failed...
-	at testng.concepts.AppCommons.TestCase1(AppCommons.java:10)
+                  <div class="stack-trace">org.testng.internal.thread.ThreadTimeoutException: Method testng.concepts.AppCommons.TestCase1() didn&apos;t finish within the time-out 3000
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 26 stack frames
+... Removed 24 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -209,10 +212,9 @@
                   <a name="TestCase1">
                   </a> <!-- TestCase1 -->
                   <span class="method-name">TestCase1</span>
-                  <div class="stack-trace">java.lang.AssertionError: Test Case 1 - Home Page Validations Failed...
-	at testng.concepts.AppCommons.TestCase1(AppCommons.java:10)
+                  <div class="stack-trace">org.testng.internal.thread.ThreadTimeoutException: Method testng.concepts.AppCommons.TestCase1() didn&apos;t finish within the time-out 3000
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 26 stack frames
+... Removed 24 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -221,7 +223,7 @@
                   <a name="TestCase3">
                   </a> <!-- TestCase3 -->
                   <span class="method-name">TestCase3</span>
-                  <div class="stack-trace">java.lang.Throwable: Method AppCommons.TestCase3(java.lang.String,java.lang.String)[pri:1, instance:testng.concepts.AppCommons@38c6f217] depends on not successfully finished methods
+                  <div class="stack-trace">java.lang.Throwable: Method AppCommons.TestCase3(java.lang.String,java.lang.String)[pri:1, instance:testng.concepts.AppCommons@79e2c065] depends on not successfully finished methods
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ... Removed 18 stack frames
 </div> <!-- stack-trace -->
@@ -235,6 +237,13 @@
               <span class="class-name">testng.concepts.AppCommons</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="TestCase2">
+                  </a> <!-- TestCase2 -->
+                  <span class="method-name">TestCase2</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="TestCase2">
@@ -256,6 +265,9 @@
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;parameter name=&quot;BROWSER&quot; value=&quot;Firefox&quot;/&gt;
   &lt;parameter name=&quot;URL&quot; value=&quot;https://www.google.com&quot;/&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;testng.concepts.TestListeners&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;testng.concepts.AppCommons&quot;/&gt;
@@ -330,32 +342,36 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(5);
+data.addRows(6);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'TestCase1')
 data.setCell(0, 2, 'testng.concepts.AppCommons')
-data.setCell(0, 3, 12);
+data.setCell(0, 3, 3020);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TestCase2')
+data.setCell(1, 1, 'TestCase1')
 data.setCell(1, 2, 'testng.concepts.AppCommons')
-data.setCell(1, 3, 3);
+data.setCell(1, 3, 3008);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'TestCase1')
 data.setCell(2, 2, 'testng.concepts.AppCommons')
-data.setCell(2, 3, 1);
+data.setCell(2, 3, 3008);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'TestCase1')
+data.setCell(3, 1, 'TestCase2')
 data.setCell(3, 2, 'testng.concepts.AppCommons')
-data.setCell(3, 3, 0);
+data.setCell(3, 3, 2);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'TestCase3')
+data.setCell(4, 1, 'TestCase2')
 data.setCell(4, 2, 'testng.concepts.AppCommons')
-data.setCell(4, 3, 0);
+data.setCell(4, 3, 1);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'TestCase3')
+data.setCell(5, 2, 'testng.concepts.AppCommons')
+data.setCell(5, 3, 0);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 16 ms</span>
+              <span class="suite-total-time">Total running time: 9 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -383,67 +399,75 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">testng.concepts.AppCommons</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">startReporting</span>
+                <span class="method-name">setupReport</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">launchBrowserAndApplication(Firefox, https://www.google.com)</span>
-                <span class="method-start">45 ms</span>
+                <span class="method-start">167 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">TestCase1</span>
-                <span class="method-start">50 ms</span>
+                <span class="method-start">172 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">closeBrowser</span>
-                <span class="method-start">67 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launchBrowserAndApplication(Firefox, https://www.google.com)</span>
-                <span class="method-start">68 ms</span>
+                <span class="method-start">3196 ms</span>
               </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">3196 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">TestCase1</span>
-                <span class="method-start">70 ms</span>
+                <span class="method-start">3197 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">73 ms</span>
+                <span class="method-start">6207 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launchBrowserAndApplication(Firefox, https://www.google.com)</span>
-                <span class="method-start">74 ms</span>
+                <span class="method-start">6207 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">TestCase1</span>
-                <span class="method-start">74 ms</span>
+                <span class="method-start">6209 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">77 ms</span>
+                <span class="method-start">9420 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">TestCase3</span>
-                <span class="method-start">80 ms</span>
+                <span class="method-start">9423 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TestCase2</span>
+                <span class="method-start">9425 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">launchBrowserAndApplication(Firefox, https://www.google.com)</span>
-                <span class="method-start">90 ms</span>
+                <span class="method-start">9425 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">TestCase2</span>
-                <span class="method-start">91 ms</span>
-              </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">94 ms</span>
+                <span class="method-start">9467 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-suite after">
-                <span class="method-name">stopReporting</span>
-                <span class="method-start">196 ms</span>
-              </div> <!-- configuration-suite after -->
+              <div class="test-method">
+                <span class="method-name">TestCase2</span>
+                <span class="method-start">9469 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">launchBrowserAndApplication(Firefox, https://www.google.com)</span>
+                <span class="method-start">9469 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">9516 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
